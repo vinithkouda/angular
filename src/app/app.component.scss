@@ -1,0 +1,24 @@
+// .app-container {
+//     position: relative; /* Make this container relatively positioned */
+//     width: 100%;
+//     height: 100%;
+//   }
+  
+//   .background {
+//     position: absolute; /* Position the background absolutely within the container */
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//   }
+  
+// .app-container {
+//     position: relative;
+//     height: 100vh; /* Ensure the container covers the entire viewport height */
+//     overflow: hidden; /* Hide overflowing content */
+//   }
+  
+#container {
+  display: flex;
+  height: 100vh; /* Set the container height to 100% of the viewport height */
+}
