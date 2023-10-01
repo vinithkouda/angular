@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
 
   private ctx: CanvasRenderingContext2D | null = null;
   private icons: { x: number; y: number; name: string }[] = [];
-  private selectedIcon: { x: number; y: number , message: string} | null = null;
+  private selectedIcon: { x: number; y: number } | null = null;
 
   constructor() { }
 
@@ -61,11 +61,11 @@ export class AppComponent implements OnInit {
         if (this.selectedIcon) {
           // If a previous icon is selected, establish a link here
           this.drawArrowLine(this.selectedIcon, { x: icon.x, y: icon.y + iconHeight / 2 });
-          console.log(`Link established from (${this.selectedIcon.message}) ${this.selectedIcon.x},${this.selectedIcon.y} to (${icon.name}) ${icon.x},${icon.y}`);
+          console.log(`Link established from ${this.selectedIcon.x},${this.selectedIcon.y} to ${icon.x},${icon.y}`);
           this.selectedIcon = null;
         } else {
           // Select the current icon
-          this.selectedIcon = { x: icon.x + iconWidth, y: icon.y + iconHeight / 2 , message : icon.name};
+          this.selectedIcon = { x: icon.x + iconWidth, y: icon.y + iconHeight / 2 };
         }
         break;
       }
