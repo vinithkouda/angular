@@ -19,16 +19,13 @@
   
   <!-- Middle Workspace -->
   <div id="middle" style="flex: 1;margin: 10px;">
-      <div id="canvas" style="position: relative; width: 100%; height: 100%;">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <pattern id="dottedGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-                    <circle width="100%" cx="1" cy="1" r="1" fill="rgba(0, 0, 0, 0.25)"></circle>
-                </pattern>
-            </defs>
-            <rect x="0" y="0" width="100%" height="100%" fill="url(#dottedGrid)"></rect>
-        </svg>
+    <div class="canvas-container" [style.width.px]="canvasWidth" [style.height.px]="canvasHeight">
+      <canvas #canvasElement [width]="canvasWidth" [height]="canvasHeight"></canvas>
+      <div class="draggable-object" cdkDrag (cdkDragMoved)="onObjectDrag($event)">
+        <!-- Your draggable object content here -->
       </div>
+      
+    </div>    
   </div>
   
   <!-- Right Container -->
