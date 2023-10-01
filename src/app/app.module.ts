@@ -15,7 +15,7 @@ import { SideNavigationComponent } from './side-navigation/side-navigation.compo
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SideNavigationComponent
+    SideNavigationComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

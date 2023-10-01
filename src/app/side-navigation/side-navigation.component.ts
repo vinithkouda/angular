@@ -21,6 +21,5 @@ export class SideNavigationComponent implements OnInit {
       event.dataTransfer.setData('text/plain', shape);
     }
   }
-  // shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
 
 }
