@@ -21,8 +21,42 @@ export class AppComponent implements OnInit {
       console.error('Canvas context not available');
       return;
     }
-    this.loadIcons();
-    this.drawIcons();
+  
+    // Convert the SVG pattern into a data URL
+    const svgPattern = `
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="dottedGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle width="100%" cx="1" cy="1" r="1" fill="rgba(0, 0, 0, 0.25)"></circle>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#dottedGrid)"></rect>
+      </svg>
+    `;
+    
+    const patternImage = new Image();
+    patternImage.src = `data:image/svg+xml;base64,${btoa(svgPattern)}`;
+  
+    // Wait for the image to load
+    patternImage.onload = () => {
+      // Create a pattern fill using the loaded image
+      const pattern = this.ctx!.createPattern(patternImage, 'repeat');
+  
+      // Set the fill style to the pattern
+      if (pattern) {
+        this.ctx!.fillStyle = pattern;
+      } else {
+        console.error('Pattern not created');
+        return;
+      }
+  
+      // Fill the entire canvas with the pattern
+      this.ctx!.fillRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
+  
+      // Load your icons and draw them as before
+      this.loadIcons();
+      this.drawIcons();
+    };
   }
 
   loadIcons() {
