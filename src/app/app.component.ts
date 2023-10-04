@@ -84,27 +84,32 @@ export class AppComponent implements OnInit {
   handleIconClick(event: MouseEvent) {
     const x = event.clientX - this.canvasContainer.nativeElement.getBoundingClientRect().left;
     const y = event.clientY - this.canvasContainer.nativeElement.getBoundingClientRect().top;
-
+  
     for (const icon of this.icons) {
       const textWidth = this.ctx!.measureText(icon.name).width;
-      const textHeight = 14; 
+      const textHeight = 14;
       const iconWidth = textWidth + 20; // Add padding
       const iconHeight = textHeight + 20; // Add padding
-
+  
       if (x >= icon.x && x <= icon.x + iconWidth && y >= icon.y && y <= icon.y + iconHeight) {
-        if (this.selectedIcon) {
-          // If a previous icon is selected, establish a link here
+        if (this.selectedIcon === null) {
+          // Select the current icon
+          this.selectedIcon = { x: icon.x + iconWidth, y: icon.y + iconHeight / 2, message: icon.name };
+        } else if (this.selectedIcon.message !== icon.name) {
+          // If a different icon is clicked, establish a link
           this.drawArrowLine(this.selectedIcon, { x: icon.x, y: icon.y + iconHeight / 2 });
           console.log(`Link established from (${this.selectedIcon.message}) ${this.selectedIcon.x},${this.selectedIcon.y} to (${icon.name}) ${icon.x},${icon.y}`);
           this.selectedIcon = null;
         } else {
-          // Select the current icon
-          this.selectedIcon = { x: icon.x + iconWidth, y: icon.y + iconHeight / 2 , message : icon.name};
+          // Deselect the current icon if it's the same as the selected icon
+          this.selectedIcon = null;
         }
         break;
       }
     }
   }
+   
+  
 
   drawArrowLine(start: { x: number; y: number }, end: { x: number; y: number }) {
     if (!this.ctx) return;
