@@ -61,8 +61,8 @@ export class AppComponent implements OnInit {
 
   loadIcons() {
     // Add your icons' coordinates and names here
-    this.icons.push({ x: 100, y: 100, name: 'Icon1' });
-    this.icons.push({ x: 300, y: 100, name: 'Icon2' });
+    this.icons.push({ x: 100, y: 100, name: 'Source' });
+    this.icons.push({ x: 300, y: 100, name: 'dest' });
     // Add more icons as needed
   }
 
