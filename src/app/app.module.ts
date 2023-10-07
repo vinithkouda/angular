@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { DataBindingService, DiagramModule, HierarchicalTreeService } from '@syncfusion/ej2-angular-diagrams';
+import { BpmnDiagramsService, ComplexHierarchicalTreeService, ConnectorBridgingService, ConnectorEditingService, DataBindingService, DiagramContextMenuService, DiagramModule, HierarchicalTreeService, LayoutAnimationService, MindMapService, PrintAndExportService, RadialTreeService, SnappingService, SymmetricLayoutService, UndoRedoService } from '@syncfusion/ej2-angular-diagrams';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,7 +21,7 @@ registerLicense('Ngo9BigBOggjHTQxAR8/V1NHaF5cXmVCf1JpQXxbf1xzZFREalhZTnRZUj0eQnx
     SideNavigationComponent,
     DiagramModule
   ],
-  providers: [HierarchicalTreeService, DataBindingService],
+  providers: [HierarchicalTreeService, MindMapService, RadialTreeService, ComplexHierarchicalTreeService, DataBindingService, SnappingService, PrintAndExportService, BpmnDiagramsService, SymmetricLayoutService, ConnectorBridgingService, UndoRedoService, LayoutAnimationService, DiagramContextMenuService, ConnectorEditingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
