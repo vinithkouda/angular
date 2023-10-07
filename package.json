@@ -20,6 +20,11 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@syncfusion/ej2-angular-base": "^23.1.38",
+    "@syncfusion/ej2-angular-diagrams": "^23.1.39",
+    "@syncfusion/ej2-angular-navigations": "^23.1.39",
+    "@syncfusion/ej2-angular-popups": "^23.1.38",
+    "@syncfusion/ej2-angular-splitbuttons": "^23.1.36",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
