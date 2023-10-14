@@ -26,7 +26,7 @@ export class AppComponent implements AfterViewInit , OnDestroy{
       "https://unpkg.com/ace-builds@1.4.12/src-noconflict"
     );
     this.aceEditor = ace.edit(this.editor.nativeElement);
-    this.aceEditor.session.setValue("<h1>Ace Editor works great in Angular!</h1>");
+    this.aceEditor.session.setValue("<h1>Ace Editor works!</h1>");
     this.aceEditor.setTheme("ace/theme/twilight");
     this.aceEditor.session.setMode("ace/mode/html");
     this.aceEditor.on("change", () => {
