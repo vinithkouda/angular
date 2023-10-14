@@ -16,7 +16,7 @@
         <canvas #canvas id="canvas" style="width: -webkit-fill-available;">
         </canvas> 
       </div> -->
-      <div #list2="cdkDropList" cdkDropList [cdkDropListData]="workspace2Items" [cdkDropListConnectedTo]="[list1]" (cdkDropListDropped)="onDrop($event, workspace2Items)" >
+      <div #list2="cdkDropList" cdkDropList [cdkDropListData]="workspace2Items" [cdkDropListConnectedTo]="[list1]" (cdkDropListDropped)="onDrop($event, workspace2Items)" style="height: 100%;" >
         <!-- <canvas #canvas id="canvas" style="width: -webkit-fill-available;"> -->
             <div *ngFor="let item of workspace2Items" cdkDrag class="workspace-item">{{ item }}</div>
         <!-- </canvas>  -->
