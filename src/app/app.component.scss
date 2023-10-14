@@ -1,38 +1,6 @@
-// .app-container {
-//     position: relative; /* Make this container relatively positioned */
-//     width: 100%;
-//     height: 100%;
-//   }
-  
-//   .background {
-//     position: absolute; /* Position the background absolutely within the container */
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//   }
-  
-// .app-container {
-//     position: relative;
-//     height: 100vh; /* Ensure the container covers the entire viewport height */
-//     overflow: hidden; /* Hide overflowing content */
-//   }
-  
 .app-ace-editor {
     border: 2px solid #f8f9fa;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-
-.container {
-    display: flex;
-}
-
-.collapsible-window {
-    width: 500px; /* Adjust the width as needed */
-    overflow: hidden;
-    transition: width 0.3s;
-    border-left: 1px solid #ccc;
-    position: relative;
 }
 
 .toggle-button {
@@ -91,3 +59,13 @@
     padding: 10px;
     border: 1px solid #000;
 }
+
+
+#canvasContainer {
+    // position: relative;
+  }
+  
+  #canvas {
+    // position: absolute;
+    
+  }

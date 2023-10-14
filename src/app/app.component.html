@@ -1,38 +1,28 @@
 <div class="horizontal-container">
-<div id="checklist" width="20%" class="horizontal-item1">
-    <div #list1="cdkDropList" cdkDropList [cdkDropListData]="workspace1Items" [cdkDropListConnectedTo]="[list2]" (cdkDropListDropped)="onDrop($event, workspace1Items)" class="workspace-container">
-        <div *ngFor="let item of workspace1Items" cdkDrag class="workspace-item">{{ item }}</div>
+    <div id="checklist" width="20%" class="horizontal-item1">
+      <div id="checklist" width="20%" class="horizontal-item1">
+            <div #list1="cdkDropList" cdkDropList [cdkDropListData]="workspace1Items" [cdkDropListConnectedTo]="[list2]" (cdkDropListDropped)="onDrop($event, workspace1Items)" class="workspace-container">
+                <div *ngFor="let item of workspace1Items" cdkDrag class="workspace-item">{{ item }}</div>
+            </div>
+        
+            <!-- <div #list2="cdkDropList" cdkDropList [cdkDropListData]="workspace2Items" [cdkDropListConnectedTo]="[list1]" (cdkDropListDropped)="onDrop($event, workspace2Items)" class="workspace-container">
+                <div *ngFor="let item of workspace2Items" cdkDrag class="workspace-item">{{ item }}</div>
+            </div> -->
+        </div>
     </div>
-    
-    <div #list2="cdkDropList" cdkDropList [cdkDropListData]="workspace2Items" [cdkDropListConnectedTo]="[list1]" (cdkDropListDropped)="onDrop($event, workspace2Items)" class="workspace-container">
-        <div *ngFor="let item of workspace2Items" cdkDrag class="workspace-item">{{ item }}</div>
+  
+    <div class="horizontal-item2">
+      <!-- <div #canvasContainer="cdkDropList" cdkDropList [cdkDropListData]="canvasItems" [cdkDropListConnectedTo]="[list2]" (cdkDropListDropped)="onDrop($event, canvasItems)">
+        <canvas #canvas id="canvas" style="width: -webkit-fill-available;">
+        </canvas> 
+      </div> -->
+      <div #list2="cdkDropList" cdkDropList [cdkDropListData]="workspace2Items" [cdkDropListConnectedTo]="[list1]" (cdkDropListDropped)="onDrop($event, workspace2Items)" >
+        <!-- <canvas #canvas id="canvas" style="width: -webkit-fill-available;"> -->
+            <div *ngFor="let item of workspace2Items" cdkDrag class="workspace-item">{{ item }}</div>
+        <!-- </canvas>  -->
     </div>
-</div>
-
-<div class="horizontal-item2">
-    <ejs-diagram #diagram id="diagram" height="580px" mode="SVG" >
-        <e-nodes>
-            <e-node id='node1' [height]=60 [width]=100 [offsetX]=300 [offsetY]=80 [shape]='shape'>
-                <e-node-annotations>
-                    <e-node-annotation content='Start'></e-node-annotation>
-                </e-node-annotations>
-            </e-node>
-            <e-node id='node2' [height]=60 [width]=100 [offsetX]=300 [offsetY]=160 [shape]='shape'>
-                <e-node-annotations>
-                    <e-node-annotation content='end'></e-node-annotation>
-                </e-node-annotations>
-            </e-node>
-        </e-nodes>
-        <e-connectors>
-            <e-connector id='connector1' sourceID='node1' targetID='node2'></e-connector>
-        </e-connectors>
-    </ejs-diagram>
-</div>
-
-
-<div
-      class="app-ace-editor" class="horizontal-item3"
-      #editor
-      style="width: 30%;"
-></div>
-</div>
+    </div>
+  
+    <div class="app-ace-editor" class="horizontal-item3" #editor style="width: 30%;"></div>
+  </div>
+  
