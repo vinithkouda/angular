@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SideNavigationComponent } from './side-navigation/side-navigation.component';
 import { registerLicense } from '@syncfusion/ej2-base';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 // Registering Syncfusion license key
 registerLicense('Ngo9BigBOggjHTQxAR8/V1NHaF5cXmVCf1JpQXxbf1xzZFREalhZTnRZUj0eQnxTdEZiWX9bcXZRTmJbU0d2XA==');
 
@@ -19,7 +19,8 @@ registerLicense('Ngo9BigBOggjHTQxAR8/V1NHaF5cXmVCf1JpQXxbf1xzZFREalhZTnRZUj0eQnx
     AppRoutingModule,
     BrowserAnimationsModule,
     SideNavigationComponent,
-    DiagramModule
+    DiagramModule,
+    DragDropModule
   ],
   providers: [HierarchicalTreeService, MindMapService, RadialTreeService, ComplexHierarchicalTreeService, DataBindingService, SnappingService, PrintAndExportService, BpmnDiagramsService, SymmetricLayoutService, ConnectorBridgingService, UndoRedoService, LayoutAnimationService, DiagramContextMenuService, ConnectorEditingService],
   bootstrap: [AppComponent]
